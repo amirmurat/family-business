@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#101624" />
+  <meta name="description" content="Тренажёр РК1: финансы семейного бизнеса и кейс Kokshe. 48 вопросов по двум публичным Kahoot, объяснения, экзамен и работа над ошибками." />
+  <title>Family Business · РК1 Тренажёр</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="questions.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"><div class="glow glow-one"></div><div class="glow glow-two"></div></div>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="./" id="brand-link" aria-label="На главную">
+        <span class="brand-symbol" aria-hidden="true">F<span>.</span></span>
+        <span class="brand-title">FAMILY<span>BUSINESS</span></span>
+      </a>
+      <div class="top-right"><span class="course-label"><span class="live-dot"></span>РК1 / ALMAU</span><button class="small-button" type="button" id="home-btn" hidden>На главную <span aria-hidden="true">↗</span></button></div>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <section class="view" id="setup-view" aria-labelledby="welcome-title">
+        <div class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-line"></span>ПОДГОТОВКА К РУБЕЖНОМУ КОНТРОЛЮ</div>
+            <h1 id="welcome-title">Знания под <em>контролем.</em></h1>
+            <p class="hero-description">Два теста, 48 вопросов. Оригинальные формулировки, варианты из Kahoot и понятный разбор каждого ответа. Без лишних картинок.</p>
+            <div class="hero-points"><span><i class="point point-green"></i>27 вопросов · теория</span><span><i class="point point-violet"></i>21 вопрос · Kokshe</span></div>
+          </div>
+          <div class="hero-graphic" aria-label="Всего 48 вопросов в двух тестах"><span class="graphic-kicker">QUESTION BANK</span><span class="graphic-number">48<span class="graphic-star">✳</span></span><span class="graphic-caption">ВОПРОСОВ · 2 ТЕСТА</span><div class="graphic-bottom"><span>Practice smarter, not longer.</span><span class="graphic-arrow">↗</span></div></div>
+        </div>
+        <section class="panel setup-panel" aria-labelledby="choose-heading">
+          <div class="section-titleline"><div><span class="section-kicker">01 / ВЫБЕРИ СЕССИЮ</span><h2 id="choose-heading">Что будем проходить?</h2></div><span class="section-note">Выбор можно изменить позже</span></div>
+          <div class="bank-grid" id="bank-grid" role="group" aria-label="Выбор теста"></div>
+          <div class="options-row"><div class="mode-block"><label class="group-label" for="mode-study">РЕЖИМ</label><div class="segment" role="group" aria-label="Режим прохождения"><button type="button" class="mode-button selected" data-mode="study" id="mode-study" aria-pressed="true">Обучение</button><button type="button" class="mode-button" data-mode="exam" aria-pressed="false">Экзамен</button></div><p class="helper-text" id="mode-description">Сразу показываем ответ и объяснение</p></div><div class="toggles"><label class="toggle"><input type="checkbox" id="shuffle-questions" checked /><span class="toggle-switch"></span><span>Перемешать вопросы</span></label><label class="toggle"><input type="checkbox" id="shuffle-options" checked /><span class="toggle-switch"></span><span>Перемешать варианты</span></label></div></div>
+          <div class="start-row"><button type="button" class="primary-button" id="start-btn">Начать тренировку <span class="button-arrow">↗</span></button><button type="button" class="ghost-button" id="resume-btn" hidden>Продолжить сессию</button><p class="start-note">Прогресс сохраняется только в этом браузере.</p></div>
+        </section>
+        <section class="info-row" aria-label="Особенности"><div class="info-card"><span class="info-icon">01</span><div><strong>По скриншотам</strong><p>Все варианты и отмеченные ответы восстановлены из двух публичных Kahoot.</p></div></div><div class="info-card"><span class="info-icon">02</span><div><strong>Без догадок</strong><p>Где в кейсе Kokshe не хватает исходных чисел, мы честно это отмечаем.</p></div></div><div class="info-card"><span class="info-icon">03</span><div><strong>Работа над ошибками</strong><p>Повторяй только то, что не получилось с первого раза.</p></div></div></section>
+      </section>
+      <section class="view" id="quiz-view" hidden aria-labelledby="question-heading">
+        <div class="quiz-header"><div class="quiz-heading"><div class="eyebrow small-eyebrow" id="quiz-bank-label">ТЕОРИЯ</div><h1 id="question-heading">Вопрос <span id="question-index">1</span><span class="heading-total"> / <span id="question-total">27</span></span></h1></div><button class="text-button" id="exit-btn" type="button">Завершить позже <span aria-hidden="true">×</span></button></div>
+        <div class="progress-track" role="progressbar" id="question-progress" aria-label="Прогресс теста" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress-fill"></div></div>
+        <div class="quiz-layout"><section class="panel question-panel"><div class="question-meta"><span class="pill" id="question-kind">ВОПРОС</span><span class="meta-right" id="quiz-mode-label">РЕЖИМ ОБУЧЕНИЯ</span></div><h2 id="question-text"></h2><p class="question-help" id="question-help">Выбери один ответ</p><div class="answer-grid" id="answers" role="group" aria-label="Варианты ответа"></div><div class="feedback" id="feedback" hidden aria-live="polite"></div><div class="quiz-actions"><span class="keyboard-tip">Подсказка: клавиши <kbd>1</kbd>–<kbd>4</kbd></span><button type="button" class="primary-button next-button" id="next-btn" disabled>Следующий <span aria-hidden="true">→</span></button></div></section><aside class="quiz-side"><div class="sidebar-card"><span class="side-kicker">ТВОЙ ПРОГРЕСС</span><strong class="side-main" id="sidebar-answered">0<span> / 27</span></strong><span class="side-caption">Ответов дано</span><div class="tiny-divider"></div><div class="mini-stats"><span>Правильных</span><b id="sidebar-correct">0</b></div><div class="mini-stats"><span>Ошибок</span><b id="sidebar-wrong">0</b></div></div><div class="note-box"><span class="note-icon" aria-hidden="true">✦</span><strong>Не торопись с формулами</strong><p id="side-tip">При расчётах сначала определи показатели, затем подставь числа.</p></div></aside></div>
+      </section>
+      <section class="view" id="result-view" hidden aria-labelledby="result-title"><div class="results-grid"><div class="panel results-panel"><span class="section-kicker">СЕССИЯ ЗАВЕРШЕНА</span><h1 id="result-title">Готово. <em>Посмотрим результат.</em></h1><p class="result-description" id="result-caption"></p><div class="result-stats"><div class="result-score-ring" id="score-ring"><span id="score-number">0%</span><small>ТОЧНОСТЬ</small></div><div class="result-detail"><div><span>Правильных ответов</span><b id="result-right">0</b></div><div><span>Ошибок</span><b id="result-wrong">0</b></div><div><span>Время прохождения</span><b id="result-time">—</b></div></div></div><div class="result-actions"><button class="primary-button" id="retry-errors" type="button">Повторить ошибки <span aria-hidden="true">↗</span></button><button class="ghost-button" id="new-test" type="button">Выбрать другой тест</button></div></div><div class="panel review-panel"><div class="review-heading"><span class="section-kicker">РАЗБОР</span><h2>Что стоит повторить</h2></div><div id="review-list" class="review-list"></div></div></div></section>
+    </main>
+    <footer class="footer"><span>FAMILY BUSINESS <span class="footer-dot">·</span> РК1 PRACTICE</span><span>Независимый учебный тренажёр, не официальный экзамен Kahoot.</span><a href="https://github.com/amirmurat/family-business" target="_blank" rel="noopener noreferrer">GITHUB ↗</a></footer>
+  </div>
+</body>
+</html>
