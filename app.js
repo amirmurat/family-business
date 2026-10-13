@@ -129,6 +129,7 @@
     if(session.index===session.ids.length-1){finish();return;}
     session.index++;
     saveSession();renderQuestion();
+    window.scrollTo({top:0,behavior:"instant"});
   };
   const finish=()=>{
     if(!session)return;
