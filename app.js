@@ -113,7 +113,7 @@
     $("#sidebar-correct").textContent=isStudy?String(correctCount(s)):"—";
     $("#sidebar-wrong").textContent=isStudy?String(answersCount(s)-correctCount(s)):"—";
     $("#side-tip").textContent=q.verification==="source"?"В кейсе нет исходной таблицы. Отмеченный ответ виден на скриншоте, но независимый расчёт не всегда возможен.":"Сначала определи, что спрашивается, затем вспомни формулу и подставь данные.";
-    visible("quiz");
+    if (views.quiz.hidden) visible("quiz");
   };
   const selectAnswer=index=>{
     if(!session||![0,1,2,3].includes(index))return;
